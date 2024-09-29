@@ -1,4 +1,4 @@
-import { Navigate } from "react-router";
+import { Navigate } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { authentication } from "@recoil/Authentication";
 

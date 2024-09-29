@@ -1,30 +1,26 @@
 import PropTypes from 'prop-types';
-import { set, sub } from 'date-fns';
-import { noCase } from 'change-case';
-import { faker } from '@faker-js/faker';
-import { useState, useRef } from 'react';
+import { useRef, useState } from 'react';
 // @mui
 import {
-  Box,
-  List,
-  Badge,
-  Button,
   Avatar,
-  Tooltip,
+  Badge,
+  Box,
   Divider,
-  Typography,
   IconButton,
-  ListItemText,
-  ListSubheader,
+  List,
   ListItemAvatar,
   ListItemButton,
+  ListItemText,
+  ListSubheader,
+  Tooltip,
+  Typography
 } from '@mui/material';
 // utils
 import { fToNow } from '../../utils/formatTime';
 // components
 import Iconify from '../../components/Iconify';
-import Scrollbar from '../../components/Scrollbar';
 import MenuPopover from '../../components/MenuPopover';
+import Scrollbar from '../../components/Scrollbar';
 
 // ----------------------------------------------------------------------
 
@@ -240,7 +236,7 @@ function renderContent(notification) {
     <Typography variant="subtitle2">
       {notification.title}
       <Typography component="span" variant="body2" sx={{ color: 'text.secondary' }}>
-        &nbsp; {noCase(notification.description)}
+        &nbsp; {notification.description}
       </Typography>
     </Typography>
   );

@@ -3,10 +3,10 @@ import Middleware from './middleware';
 
 // layouts
 import DashboardLayout from './layouts/dashboard';
-import LogoOnlyLayout from './layouts/LogoOnlyLayout';
+import LogoOnly from './layouts/logo-only/LogoOnly';
 
 // Not Auth
-import Login from './pages/Login';
+import Login from './pages/login';
 import NotFound from './pages/Page404';
 
 // ----------------------------------------------------------------------
@@ -18,9 +18,12 @@ export default function Router() {
             path: "login",
             element: (
                 // <Middleware.Before>
-                    <Login />
+                    <LogoOnly footer={false} />
                 // </Middleware.Before>
             ),
+            children: [
+                { path: "", element: <Login /> },
+            ]
         },
         {
             path: "/dashboard",
@@ -33,7 +36,7 @@ export default function Router() {
         },
         {
             path: "/",
-            element: <LogoOnlyLayout />,
+            element: <LogoOnly />,
             children: [
                 { path: "/", element: <Navigate to="/login" /> },
                 { path: "404", element: <NotFound /> },

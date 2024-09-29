@@ -11,8 +11,8 @@
 # production
 /build
 /dist
-Api.jsx
 
+pnpm-lock.yaml
 
 # misc
 .DS_Store
