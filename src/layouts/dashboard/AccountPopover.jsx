@@ -12,6 +12,7 @@ import { useRecoilValue } from 'recoil';
 import { authentication } from '@recoil/Authentication';
 import ResetPasswordDialog from '@components/ResetPasswordDialog';
 import CustomLinkComponent from '@components/CustomLinkComponent';
+import { useTheme } from '@emotion/react';
 
 // ----------------------------------------------------------------------
 
@@ -36,6 +37,7 @@ const MENU_OPTIONS = [
 // ----------------------------------------------------------------------
 
 export default function AccountPopover() {
+    const theme = useTheme()
     const navigate = useNavigate();
     const anchorRef = useRef(null);
 
@@ -118,7 +120,7 @@ export default function AccountPopover() {
 
                 <Stack sx={{ p: 1 }}>
                     <MenuItem onClick={handleClose}>
-                        <CustomLinkComponent style={{ textDecoration: 'none', color: 'black' }} label='Edit Profil' url={`/user/user-list/edit/${user?.id}`} />
+                        <CustomLinkComponent style={{ textDecoration: 'none', color: theme.palette.text.primary }} label='Edit Profil' url={`/user/user-list/edit/${user?.id}`} />
                     </MenuItem>
                     <MenuItem
                         onClick={handleDialog}

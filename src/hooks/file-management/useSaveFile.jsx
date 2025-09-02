@@ -1,6 +1,6 @@
 import useCustomSnackbar from '@hooks/useCustomSnackbar'
+import { useMutation } from '@tanstack/react-query'
 import http from '@variable/Api'
-import { useMutation } from 'react-query'
 import { useNavigate } from 'react-router-dom'
 
 const useSaveFile = ({ onSuccess }) => {

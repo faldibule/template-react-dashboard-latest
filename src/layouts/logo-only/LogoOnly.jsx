@@ -12,13 +12,12 @@ const APP_BAR_DESKTOP = 70;
 const RootStyle = styled('div')({
   display: 'flex',
   minHeight: '100%',
-  overflow: 'hidden'
+  maxWidth: '100%'
 });
 
 const MainStyle = styled('div')(({ theme }) => ({
   flexGrow: 1,
-  overflow: 'auto',
-  backgroundColor: '#CDDEE1',
+  backgroundColor: theme.palette.background.default,
 }));
 
 
@@ -31,7 +30,7 @@ export default function index({ footer = true }) {
     <RootStyle>
       {/* <NavbarLogoOnly /> */}
       <MainStyle>
-          <Stack direction='row' justifyContent='center' alignItems='center'>
+          <Stack direction='row' justifyContent='center' alignItems='center' mb={10}>
               <Box onClick={() => navigate('/')} component='img' src='/images/logo.png' sx={{ cursor: 'pointer', aspectRatio: '3/2', height: 120, objectFit: 'contain' }} />
           </Stack>
           <Outlet />

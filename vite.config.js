@@ -13,11 +13,4 @@ export default defineConfig({
           '@utils': '/src/utils',
         }
     },
-    server: {
-        host: true,
-        port: 5173,
-        watch: {
-            usePolling: true,
-        },
-    },
 });

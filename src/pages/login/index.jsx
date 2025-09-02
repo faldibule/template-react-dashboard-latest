@@ -1,23 +1,15 @@
 import CustomLinkComponent from '@components/CustomLinkComponent'
+import DarkModeToggle from '@components/DarkModeToggle'
 import Page from '@components/Page'
 import useLogin from '@hooks/auth/useLogin'
 import useShowFile from '@hooks/file/useShowFile'
 import { LoadingButton } from '@mui/lab'
-import { Alert, AlertTitle, Box, Button, Card, Stack, TextField, Typography } from '@mui/material'
+import { Alert, AlertTitle, Box, Button, Card, Container, Grid, Stack, TextField, Typography } from '@mui/material'
 import { authentication } from '@recoil/Authentication'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useRecoilState } from 'recoil'
 
-const BannerComponentTesting = () => {
-    return (
-        <Box component='div' sx={{ width: '100%', bgcolor: '#015368', display: { xs: 'none', md: 'flex' }, justifyContent: 'center', alignItems: 'center' }}>
-            <Box sx={{ width: '70%' }}>
-                <Box component='img' src='/images/login.png' sx={{ width: '100%', objectFit: 'cover' }} />
-            </Box>
-        </Box>
-    )
-}
 const LoginComponent = () => {
     const navigate = useNavigate()
     const [auth, setAuth] = useRecoilState(authentication)
@@ -78,6 +70,7 @@ const LoginComponent = () => {
     return (
         <Card sx={{ p: 3, width: '100%' }}>
             <Stack spacing={3}>
+                <DarkModeToggle />
                 <Typography fontWeight='bold' fontSize='1.5rem' textAlign='center'>Masuk</Typography>
                 <Typography fontWeight='bold' fontSize='0.9rem' textAlign='center'>Silahkan masukan informasi anda dibawah ini!</Typography>
                 {error !== '' ?
@@ -113,14 +106,15 @@ const LoginComponent = () => {
 const index = () => {
     return (
         <Page title='Login'>
-            <Stack mb={{ xs: 5 }} direction='row' justifyContent='center' alignItems='center'>
-                <Card sx={{ width: { xs: '90%', md: '70%' } }}>
-                    <Stack direction={{ md: 'row', xs: 'column' }} bgcolor='#005267'>
-                        <LoginComponent />
-                        <BannerComponentTesting />
-                    </Stack>
-                </Card>
-            </Stack>
+            <Container>
+                <Grid container justifyContent='center'>
+                    <Grid item xs={12} md={6}>
+                        <Card>
+                            <LoginComponent />
+                        </Card>
+                    </Grid>
+                </Grid>
+            </Container>
         </Page>
     )
 }

@@ -14,14 +14,15 @@ const APP_BAR_DESKTOP = 70;
 const RootStyle = styled('div')({
   display: 'flex',
   minHeight: '100%',
-  overflow: 'hidden'
+  maxWidth: '100%',
 });
 
 const MainStyle = styled('div')(({ theme }) => ({
   flexGrow: 1,
-  overflow: 'auto',
   minHeight: '100%',
+  maxWidth: '100%',
   paddingTop: APP_BAR_MOBILE + 24,
+  backgroundColor: theme.palette.background.default,
   paddingBottom: theme.spacing(10),
   [theme.breakpoints.up('lg')]: {
     paddingTop: APP_BAR_DESKTOP + 24,

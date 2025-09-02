@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Card, Typography, CardHeader, CardContent } from '@mui/material';
 import { Timeline, TimelineDot, TimelineItem, TimelineContent, TimelineSeparator, TimelineConnector } from '@mui/lab';
 // utils
-import { fDateTime } from '../../../utils/formatTime';
 
 // ----------------------------------------------------------------------
 
@@ -67,7 +66,7 @@ function OrderItem({ item, isLast }) {
         <Typography variant="subtitle2">{title}</Typography>
 
         <Typography variant="caption" sx={{ color: 'text.secondary' }}>
-          {fDateTime(time)}
+          lorem
         </Typography>
       </TimelineContent>
     </TimelineItem>

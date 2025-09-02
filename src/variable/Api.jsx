@@ -12,6 +12,14 @@ http.interceptors.request.use((config) => {
    }
    return config;
 });
+http.interceptors.response.use(undefined, err => {
+      const error = err.response;
+      if (error.config.url !== 'auth/user' && error.status === 401 && error.config && !error.config.__isRetryRequest && window.location.pathname !== '/custom-dashboard/') {
+         window.alert('Please login first before continuing the process.')
+         window.location = `/login`
+      }
+      return Promise.reject(err);
+});
 
 
 export default http;

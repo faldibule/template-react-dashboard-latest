@@ -1,5 +1,5 @@
+import { useMutation } from '@tanstack/react-query'
 import http from '@variable/Api'
-import { useMutation } from 'react-query'
 
 const useShowFile = ({ onSuccess }) => {
     return useMutation({

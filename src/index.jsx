@@ -10,7 +10,8 @@ import App from './App';
 import { SnackbarProvider, closeSnackbar } from 'notistack';
 import { Button } from '@mui/material';
 import { RecoilRoot } from 'recoil';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
 const queryClient = new QueryClient()
 // ----------------------------------------------------------------------
 

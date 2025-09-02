@@ -16,7 +16,6 @@ import {
   Typography
 } from '@mui/material';
 // utils
-import { fToNow } from '../../utils/formatTime';
 // components
 import Iconify from '../../components/Iconify';
 import MenuPopover from '../../components/MenuPopover';
